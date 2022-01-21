@@ -1,28 +1,25 @@
-from dataclasses import replace
-from encodings import normalize_encoding
-from pickle import TRUE
-from pstats import SortKey
 import pygame
 import sys
 import numpy as np 
 import time
 from pygame.locals import *
 from key_inputs import KEY_INPUTS
-from ui.single_pixel import SinglePixel
 from sorting_visualisation_shapes.circle_sorting import CircleSorting
-from sorting_algorithms.bubble_sort import SortingAlgorithm
+from sorting_algorithms.sorting_algorithm import SortingAlgorithm
+import copy
+
  
+
 pygame.init()
 MAIN_LOOP = True
 HEIGHT = 300
 WIDTH = 300
-CENTER = (500,500)
 CAPTION = "simonmtr sorting visualization"
 FramePerSec = pygame.time.Clock()
 
-SCREEN = pygame.display.set_mode((WIDTH, HEIGHT))
-SORTING_ARRAY = np.random.choice(range(100), size=(100), replace=False)
-print(SORTING_ARRAY)
+SCREEN = pygame.display.set_mode((0,0), pygame.FULLSCREEN)
+SCREEN_SIZE = pygame.display.get_window_size()
+SORTING_ARRAY = np.random.choice(range(200), size=(200), replace=False)
 
 while MAIN_LOOP:
     pygame.display.set_caption(CAPTION)
@@ -32,8 +29,14 @@ while MAIN_LOOP:
         pygame.quit()
         sys.exit()
     SCREEN.fill(0)
-    SortingAlgorithm.bubbleSort(SORTING_ARRAY,SCREEN)
-    # CircleSorting.create_initial_circle(SCREEN, SORTING_ARRAY, CENTER)
-    time.sleep(5)
+    sa = SortingAlgorithm()
+    sa.quickSort(SORTING_ARRAY,SORTING_ARRAY,SCREEN,SCREEN_SIZE)
+    temp_array = copy.deepcopy(SORTING_ARRAY)
+    temp_array_2 = copy.deepcopy(SORTING_ARRAY)
+    SortingAlgorithm.bubbleSort(SORTING_ARRAY,SORTING_ARRAY,SCREEN, SCREEN_SIZE)
+    CircleSorting.paint_circle(temp_array,SORTING_ARRAY,SCREEN, SCREEN_SIZE)
+    SortingAlgorithm.insertionSort(temp_array,SORTING_ARRAY,SCREEN, SCREEN_SIZE)
+    CircleSorting.paint_circle(temp_array_2,SORTING_ARRAY,SCREEN,SCREEN_SIZE)
 
+    # np.random.shuffle(SORTING_ARRAY)
 

@@ -1,9 +1,6 @@
-
-import math
+from math import ceil
 
 class RGBHandling:
-
-
     def get_rgb_color(sorting_array_length, current_point):
         RED_PINK = [[255, 0, i] for i in range(256)]
         PINK_BLUE = [[i, 0, 255] for i in reversed(range(256))]
@@ -14,7 +11,5 @@ class RGBHandling:
         RGB = RED_PINK + PINK_BLUE + BLUE_AQUA + AQUA_GREEN + GREEN_YELLOW + YELLOW_RED
         RGB_SIZE = len(RGB)
 
-        # steps = sorting_array_length/RGB_SIZE * 100
-        # print(f"percent from rgb array {math.floor(steps)*current_point} with current point {current_point}")
-        # return RGB[math.floor(steps)*current_point]
-        return PINK_BLUE[current_point]
+        steps = ceil(RGB_SIZE/sorting_array_length)
+        return RGB[current_point*steps%RGB_SIZE] 
