@@ -20,14 +20,14 @@ SCREEN = pygame.display.set_mode((0,0), pygame.FULLSCREEN)
 SCREEN_SIZE = pygame.display.get_window_size()
 SORTING_ARRAY = np.random.choice(range(50), size=(50), replace=False)
 
-while MAIN_LOOP:
-    pygame.display.set_caption(CAPTION)
-    KEY = KEY_INPUTS()
-    if KEY == "ESCAPE":
-        MAIN_LOOP = False
-        pygame.quit()
-        sys.exit()
-    SCREEN.fill(0) # fill with backcolor
-    sa = SortingAlgorithm()
-    sa.do_different_sorting_algorithms(SORTING_ARRAY, SCREEN, SCREEN_SIZE)
+# while MAIN_LOOP:
+pygame.display.set_caption(CAPTION)
+KEY = KEY_INPUTS()
+if KEY == "ESCAPE":
+    MAIN_LOOP = False
+    pygame.quit()
+    sys.exit()
+SCREEN.fill(0) # fill with backcolor
+sa = SortingAlgorithm()
+sa.do_different_sorting_algorithms(SORTING_ARRAY, SCREEN, SCREEN_SIZE)
 
