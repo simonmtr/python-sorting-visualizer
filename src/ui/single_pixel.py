@@ -14,5 +14,4 @@ class SinglePixel:
         screen.fill(0)
         for sp in single_pixels:
             sp.draw_pixel()
-        print("updated")
         pygame.display.update()

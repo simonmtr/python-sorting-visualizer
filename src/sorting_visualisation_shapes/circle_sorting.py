@@ -38,8 +38,6 @@ class CircleSorting:
             sp = SinglePixel(screen, RGBHandling.get_rgb_color(len(array_to_sort),i), self.get_x_and_y(array_to_sort, i)[0],self.get_x_and_y(array_to_sort, i)[1])
             pixels.append(sp)
             sp.draw_pixel()
-        print("updated screen")
-        
         pygame.display.update()
         return pixels
     

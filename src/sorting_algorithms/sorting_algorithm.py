@@ -1,14 +1,15 @@
 import copy
+import time
 
 from random import randint
 from sorting_visualisation_shapes.circle_sorting import CircleSorting
 from ui.rgb_handling import RGBHandling
 from ui.single_pixel import SinglePixel
-import time
+
 
 class SortingAlgorithm:
     def __init__(self) -> None:
-        self.sorting_functions = ['quick_sort', 'bubble_sort', 'insertion_sort' ]
+        self.sorting_functions = ['quick_sort', 'bubble_sort', 'insertion_sort']
         self.pixel_array = []
         pass
     def do_different_sorting_algorithms(self, array_to_sort, screen, screensize):
@@ -68,7 +69,6 @@ class SortingAlgorithm:
         cs = CircleSorting(len(full_array_to_sort),screensize)
         if len(array_to_sort) < 2:
             return array_to_sort
-
         low, same, high = [], [], []
         pivot = array_to_sort[randint(0, len(array_to_sort) - 1)]
         for item in array_to_sort:
@@ -81,5 +81,3 @@ class SortingAlgorithm:
         self.pixel_array = cs.paint_circle(full_array_to_sort, screen)
         time.sleep(0.02)
         return self.quickSort(full_array_to_sort,low, screen,screensize) + same + self.quickSort(full_array_to_sort,high, screen,screensize)
-    
-    
