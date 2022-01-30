@@ -12,6 +12,5 @@ class Pixel(Shape):
     def draw(self):
         self.pixel = pygame.draw.circle(self.ui.screen, self.color, (self.x, self.y), GlobalHelper.get_pixel_size())
         pygame.display.update()
-        print("pixel created")
     def update_value(self, value, index):
         return super().update_value(value, index)

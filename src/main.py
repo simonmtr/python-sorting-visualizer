@@ -13,7 +13,7 @@ FramePerSec = pygame.time.Clock()
 
 SCREEN = pygame.display.set_mode((0,0), pygame.FULLSCREEN)
 SCREEN_SIZE = pygame.display.get_window_size()
-UI = UI(SCREEN,SCREEN_SIZE)
+UI = UI(SCREEN, SCREEN_SIZE)
 CAPTION = "Sorting Visualization"
 
 while MAIN_LOOP:
