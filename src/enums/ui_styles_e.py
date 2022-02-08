@@ -2,4 +2,5 @@ from enum import Enum
 
 class UiStylesE(Enum):
     CIRCLE = 1
-    BARS = 2
+    PYRAMID = 2
+    BARS = 3

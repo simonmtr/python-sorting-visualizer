@@ -25,12 +25,7 @@ while MAIN_LOOP:
         pygame.quit()
         sys.exit()
     if KEY == "ONE":
-        print("doing circle sorting")
+        print("doing sorting")
         sc.circle_do_different_sorting_algorithms()
-    if KEY == "TWO":
-        print("doing bar sorting")
-        bar = Bar(UI,"green",100,100)
-        bar.move()
-        # sc.bars_do_different_sorting_algorithms()
     SCREEN.fill(0) # fill with backcolor
 

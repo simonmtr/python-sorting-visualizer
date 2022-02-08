@@ -1,11 +1,10 @@
-from sorting.sorting_visualisation_A import SortingVisualisationA
+from sorting_visualisation_shapes.sorting_visualisation_A import SortingVisualisationA
 import math
 from helper.global_helper import GlobalHelper
 
 class CircleSorting(SortingVisualisationA):
     def __init__(self, screensize) -> None:
         super().__init__()
-        # set middle of circle according to current position
         self.step = 360/GlobalHelper.get_array_to_sort_size()
         self.middle_of_screen_x = screensize[0]/2
         self.middle_of_screen_y = screensize[1]/2

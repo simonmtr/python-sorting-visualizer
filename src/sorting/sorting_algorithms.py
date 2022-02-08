@@ -2,7 +2,7 @@ import copy
 import time
 
 from random import randint
-from sorting.circle_sorting import CircleSorting
+from sorting_visualisation_shapes.circle_sorting import CircleSorting
 
 
 class SortingAlgorithms:
@@ -20,14 +20,11 @@ class SortingAlgorithms:
                     shapes_array_to_sort[j+1].update_value(temp_value,j)
                     time.sleep(0.02)
     def insertion_sort(self, shapes_array_to_sort):
-        # temp_array_for_ui = []
         for i in range(1, len(shapes_array_to_sort)):
             currentValue = shapes_array_to_sort[i].value
-            # temp_array_for_ui = copy.deepcopy(shapes_array_to_sort)
             while i > 0 and shapes_array_to_sort[i - 1].value > currentValue:
                 temp_value = shapes_array_to_sort[i - 1].value
                 shapes_array_to_sort[i - 1].update_value(shapes_array_to_sort[i].value, i)
                 shapes_array_to_sort[i].update_value(temp_value, i - 1)
                 i = i - 1
             time.sleep(0.02)
-            # shapes_array_to_sort[i] = currentValue
