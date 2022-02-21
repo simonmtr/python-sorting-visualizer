@@ -1,6 +1,6 @@
-from ui.shape_A import Shape
 import pygame
 
+from ui.shape_A import Shape
 
 class Bar(Shape):
     def __init__(self, value, index, ui, sorting_visualization_a) -> None:

@@ -1,8 +1,6 @@
-import pygame
-from enums.sorting_algorithms_e import SortingAlgorithmE
 import time
-import copy
-import numpy as np
+
+from enums.sorting_algorithms_e import SortingAlgorithmE
 from enums.ui_styles_e import UiStylesE
 from helper.global_helper import GlobalHelper
 from sorting_visualisation_shapes.bar_sorting import BarSorting

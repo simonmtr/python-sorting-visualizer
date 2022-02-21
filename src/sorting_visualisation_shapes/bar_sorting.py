@@ -1,5 +1,4 @@
 from sorting_visualisation_shapes.sorting_visualisation_A import SortingVisualisationA
-import math
 from helper.global_helper import GlobalHelper
 
 class BarSorting(SortingVisualisationA):

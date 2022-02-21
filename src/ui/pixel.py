@@ -1,8 +1,7 @@
-from ui.shape_A import Shape
 import pygame
+
+from ui.shape_A import Shape
 from helper.global_helper import GlobalHelper
-
-
 
 class Pixel(Shape):
     def __init__(self, value, index, ui, sorting_visualization_a) -> None:

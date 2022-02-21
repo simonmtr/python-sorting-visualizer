@@ -1,5 +1,6 @@
-from sorting_visualisation_shapes.sorting_visualisation_A import SortingVisualisationA
 import math
+
+from sorting_visualisation_shapes.sorting_visualisation_A import SortingVisualisationA
 from helper.global_helper import GlobalHelper
 
 class PyramidSorting(SortingVisualisationA):

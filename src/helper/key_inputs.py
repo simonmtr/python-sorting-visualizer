@@ -8,8 +8,6 @@ def KEY_INPUTS():
                 return "ESCAPE"
             if Event.key == K_1:
                 return "ONE"
-            if Event.key == K_2:
-                return "TWO"
         if Event.type == pygame.QUIT:
             return "ESCAPE"
     return None

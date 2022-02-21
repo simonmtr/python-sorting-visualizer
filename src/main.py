@@ -1,11 +1,11 @@
 import pygame
 import sys
+
 from pygame.locals import *
 from helper.key_inputs import KEY_INPUTS
 from sorting.sorting_controller import SortingController
 from ui.bar import Bar 
 from ui.ui import UI
-
 
 pygame.init()
 MAIN_LOOP = True
@@ -27,5 +27,5 @@ while MAIN_LOOP:
     if KEY == "ONE":
         print("doing sorting")
         sc.circle_do_different_sorting_algorithms()
-    SCREEN.fill(0) # fill with backcolor
+    SCREEN.fill(0)
 
